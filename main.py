@@ -53,14 +53,9 @@ class BinarySearchTree():
 
 def main():
     bst = BinarySearchTree()
-    arr = []
     for i in range(20):
-     r = random.randint(0, 100)
-     arr.append(r)
-     bst.insert(r)
-    for n in arr:
-      print(n, end=" ")
-    print("\n")
+      r = random.randint(0, 100)
+      bst.insert(r)
     bst.printTree()
     
 
