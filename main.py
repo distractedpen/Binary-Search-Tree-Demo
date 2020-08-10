@@ -35,35 +35,32 @@ class BinarySearchTree():
                         current = current.right_child
 
     def printTree(self):
-        def printSubTree(node):
-            if node.left_child != None:
-                temp = printSubTree(node.left_child) + " {0}".format(node.data)
-                if node.right_child != None:
-                    return temp + " " + printSubTree(node.right_child)
-                else:
-                    return temp
-            elif node.right_child != None:
-                return "{0} ".format(node.data) + printSubTree(node.right_child)
-            else:
-                return "{0}".format(node.data)
-                
-        print(printSubTree(self.root.left_child)
-              + " {0} ".format(self.root.data)
-              + printSubTree(self.root.right_child))
+      def printSubTree(node):
+        if node.left_child != None:
+          temp = printSubTree(node.left_child) + " {0}".format(node.data)
+          if node.right_child != None:
+            return temp + " " + printSubTree(node.right_child)
+          else:
+            return temp
+        elif node.right_child != None:
+          return "{0} ".format(node.data) + printSubTree(node.right_child)
+        else:
+          return "{0}".format(node.data)
+        
+      print(printSubTree(self.root))
+      
         
 
 def main():
     bst = BinarySearchTree()
-    arr = [100, 58, 75, 70, 74]
-#    for i in range(5):
-#      r = random.randint(0, 100)
-#      arr.append(r)
-#      bst.insert(r)
-#    for n in arr:
-#      print(n, end=" ")
-#    print("\n")
+    arr = []
+    for i in range(20):
+     r = random.randint(0, 100)
+     arr.append(r)
+     bst.insert(r)
     for n in arr:
-      bst.insert(n)
+      print(n, end=" ")
+    print("\n")
     bst.printTree()
     
 
